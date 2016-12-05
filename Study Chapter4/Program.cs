@@ -25,6 +25,8 @@ namespace Study_Chapter4
             //linkedList.Find(2);
 
             linkedList.Foreach();
+
+            
             
 
             
@@ -74,23 +76,19 @@ namespace Study_Chapter4
             }
         }
 
-        public int Count()
+        public uint Count
         {
-            int count = 0;
-            MyLinkedListNode<T> startPointForWhile = startPoint;
-            while (startPointForWhile != null)
+            get
             {
-                if (startPointForWhile.nextLink != null)
+                uint count = 0;
+                MyLinkedListNode<T> startPointForWhile = startPoint;
+                while (startPointForWhile.nextLink != null)
                 {
                     startPointForWhile = startPointForWhile.nextLink;
                     count++;
                 }
-                else
-                {
-                    return count;
-                }
+                return count;
             }
-            return count;
         }
 
         public  void RemoveT(T value)
